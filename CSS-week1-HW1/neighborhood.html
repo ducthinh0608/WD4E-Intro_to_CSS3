@@ -3,47 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Neighborhood</title>
+    <title>Blossom Boutique | Our Bouquets</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <a href="#main-content" class="skip-link">Chuyển đến Nội dung chính</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
-        <h1>Explore My Neighborhood</h1>
+        <h1>Signature Flower Collections</h1>
     </header>
 
-    <nav>
-        <img src="https://openclipart.org/download/216413/9062.svg" alt="Navigation Logo">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="neighborhood.html">Neighborhood</a></li>
-            <li><a href="parks.html">Parks</a></li>
-        </ul>
+    <nav class="nav-flex">
+        <a href="index.html">Home</a>
+        <a href="neighborhood.html" class="active">Our Bouquets</a>
+        <a href="parks.html">Flower Gallery</a>
     </nav>
 
     <main id="main-content">
-        <h2>Neighborhood Highlights</h2>
-        <p>Welcome to the neighborhood page. Below you can see the local attractions arranged in a modern two-column layout.</p>
+        <h2>Handcrafted Arrangements</h2>
+        <p>Browse our popular collections styled in a modern multi-column grid layout.</p>
         
-        <!-- YÊU CẦU MỚI: Sử dụng lớp lưới (grid) gồm 2 cột, mỗi cột xấp xỉ 40% -->
-        <div class="grid">
-            <div>
-                <img src="https://openclipart.org/download/171175/local-business.svg" alt="Local Shops">
-                <h3>Local Shops & Cafes</h3>
-                <p>Our neighborhood features a variety of small, family-owned businesses and cozy coffee shops.</p>
+        <div class="flower-grid">
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=500" alt="Elegant Red Roses Bouquet">
+                <h3>Midnight Romance</h3>
+                <p>Classic arrangement of deep crimson roses wrapped in premium minimalist black sheets.</p>
             </div>
-            <div>
-                <img src="https://openclipart.org/download/276332/1490710626.svg" alt="Community Center">
-                <h3>Community Center</h3>
-                <p>A vibrant place where residents gather for events, sports, and weekly local markets.</p>
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1587334206502-7b76e5019599?w=500" alt="Bright yellow Sunflowers with daisies">
+                <h3>Sunshine Fields</h3>
+                <p>Radiant golden sunflowers paired beautifully with wild daisies to deliver bright happiness.</p>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; University of Michigan - Introduction to CSS3</p>
+        <p>&copy; 2026 Blossom Boutique | Designed for Accessibility</p>
     </footer>
 
 </body>
