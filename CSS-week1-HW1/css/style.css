@@ -1,112 +1,121 @@
 /* ==========================================================================
-   COMBINED STYLE SHEET (WEEK 1 + ADVANCED GRID/FLEXBOX ASSIGNMENT)
+   MICHIGAN SPRINGTIME - CHUẨN HÓA THEO ĐÚNG FILE HTML GỐC CỦA BẠN
    ========================================================================== */
 
-/* --- CÁC THUỘC TÍNH TỪ BÀI TẬP TRƯỚC --- */
+/* --- THUỘC TÍNH BÀI 1 --- */
 
 body {
-    font-family: Arial, sans-serif; /* Sửa đổi thuộc tính họ phông chữ */
-    font-size: 16px;                /* Sửa đổi kích thước phông chữ */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #f9f9f9;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
 }
 
 header {
-    background-color: #00274c;      /* Màu nền Xanh đậm (Chuẩn màu ĐH Michigan) */
-    padding: 15px;
+    background-color: #00274c; /* Màu xanh đậm Michigan */
+    padding: 20px;
 }
 
 h1 {
-    text-align: center;             /* Căn chỉnh văn bản */
-    font-family: 'Helvetica Neue', sans-serif; /* Họ phông chữ */
-    color: #ffffff;                 /* Thuộc tính màu sắc */
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #ffffff; /* Chữ trắng để nổi bật trên nền xanh */
     margin: 0;
 }
 
 main {
-    background-color: #ffffff;      /* Sửa đổi màu nền */
-    font-size: 1.1em;               /* Thuộc tính kích thước phông chữ */
-    padding: 20px;
-    margin: 10px;
+    background-color: #ffffff;
+    font-size: 1.1em;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 1000px;
 }
 
 p {
-    line-height: 1.6;               /* Thuộc tính chiều cao dòng */
+    line-height: 1.8; /* Giúp đoạn văn thoáng, dễ đọc hơn */
+    color: #333333;
 }
 
 footer {
-    background-color: #00274c;      /* Sửa đổi thuộc tính màu nền */
+    background-color: #00274c;
     color: #ffffff;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     margin-top: 20px;
 }
 
-/* Kiểu dáng cho phần tử li */
+/* Định dạng menu */
+nav {
+    display: inline-block;
+    width: 80%;
+    background-color: #ffcb05; /* Đổi sang nền vàng Michigan để sửa lỗi tương phản chữ tím */
+    padding: 15px 10%;
+}
+
 li {
-    display: inline-block;          
-    width: 120px;                   
+    display: inline-block;
+    width: 150px; /* Tăng độ rộng để chữ không bị đè lên nhau */
     text-align: center;
 }
 
-/* --- CÁC THUỘC TÍNH BỔ SUNG CHO BÀI TẬP MỚI --- */
+nav a {
+    color: #00274c !important; /* Ép chữ menu thành màu xanh đậm cho rõ */
+    text-decoration: none;
+    font-weight: bold;
+}
 
-/* Thiết lập link "Chuyển đến nội dung chính" ẩn đi, chỉ hiện khi ấn TAB */
+
+/* --- THUỘC TÍNH BÀI 2 (GRID & FLEX) --- */
+
+/* Link ẩn nhảy trang */
 .skip-link {
     position: absolute;
-    top: -40px;
+    top: -50px;
     left: 0;
-    background: #ffcb05;            /* Màu vàng ĐH Michigan */
+    background: #ffcb05;
     color: #00274c;
-    padding: 8px;
+    padding: 10px;
     z-index: 100;
     text-decoration: none;
     font-weight: bold;
 }
 .skip-link:focus {
-    top: 0;                         /* Hiện lên trên cùng khi focus */
+    top: 0;
 }
 
-/* Thay đổi phần tử nav để sử dụng khối nội tuyến (inline-block) và rộng khoảng 80% */
-nav {
-    display: inline-block;
-    width: 80%;
-    background-color: #ffcb05;      /* Màu nền vàng */
-    padding: 10px 10%;
-}
-
-nav a {
-    color: #00274c;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Bộ chọn hậu duệ: chỉ tạo kiểu cho hình ảnh TRONG điều hướng (nav img) rộng khoảng 10% */
+/* Ảnh trong nav rộng 10% */
 nav img {
-    width: 10%;
+    width: 100px;
     height: auto;
     vertical-align: middle;
 }
 
-/* Tạo kiểu cho lớp lưới để sử dụng lưới hai cột, mỗi cột xấp xỉ 40% */
+/* Cấu trúc Grid 2 cột cho trang Neighborhood */
 .grid {
     display: grid;
     grid-template-columns: 40% 40%;
-    justify-content: space-around;  /* Sử dụng các thuộc tính căn chỉnh */
-    align-items: center;           
-    row-gap: 25px;                 
+    justify-content: space-around;
+    align-items: start;
+    row-gap: 25px;
+    margin-top: 20px;
 }
 
-/* Bộ chọn hậu duệ: chỉ tạo kiểu cho các hình ảnh TRONG lớp lưới (.grid img) rộng 100% */
 .grid img {
     width: 100%;
     height: auto;
+    border-radius: 4px;
 }
 
-/* Tạo kiểu cho lớp flex để sử dụng flex, thiết lập các thuộc tính flex-wrap và justify-content */
+/* Cấu trúc Flexbox cho trang Parks */
 .flex {
     display: flex;
-    flex-wrap: wrap;               
-    justify-content: space-between; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.flex img {
+    width: 30%;
+    height: auto;
 }
