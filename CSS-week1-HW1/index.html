@@ -1,44 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Springtime In Michigan</title>
-  <!-- You will need to link to the CSS file -->
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to CSS3 - Home</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-  <header>
+
+    <!-- YÊU CẦU MỚI: Thêm link chuyển đến nội dung chính -->
+    <a href="#main-content" class="skip-link">Chuyển đến Nội dung chính</a>
+
+    <header>
+        <h1>Welcome to My First Styled Website</h1>
+    </header>
+
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="neighborhood.html">Neighborhood Walks</a></li>
-        <li><a href="parks.html">Walks in the Park</a></li>
-      </ul>
+        <!-- YÊU CẦU MỚI: Thêm một ảnh hình ảnh trong điều hướng -->
+        <img src="https://openclipart.org/download/216413/9062.svg" alt="Navigation Logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="neighborhood.html">Neighborhood</a></li>
+            <li><a href="parks.html">Parks</a></li>
+        </ul>
     </nav>
-    <img src="images/BaconGallupPark.jpg" width="200" alt="Brown Labradoodle sitting next to a statue.">
-    <h1>Springtime in Michigan</h1>
-  </header>
-  <main>
-    <p>Springtime in <a href="https://www.michigan.org/city/ann-arbor">Ann Arbor</a> is a beautiful time. Even though
-      it can be chilly at times, it is nice to walk my dog Bacon. This site includes some pictures I have taken on
-      these walks. </p>
 
-    <p>Sometimes we walk around the neighborhood, other times we make it to the woods. Ann Arbor also has some
-      beautiful lakes and rivers including the <a
-        href="https://www.annarbor.org/things-to-do/recreation-outdoors/huron-river/">Huron River Watertrail</a> and
-      the <a href="https://www.a2gov.org/departments/Parks-Recreation/parks-places/argo/pages/default.aspx">Argo Park
-        Cascades</a>.</p>
+    <!-- YÊU CẦU MỚI: Thêm id="main-content" vào thẻ main -->
+    <main id="main-content">
+        <h2>About This Project</h2>
+        <p>This website is a project for the Introduction to CSS3 course from the University of Michigan. It demonstrates the ability to style multiple pages using a single external stylesheet.</p>
+        <p>Throughout this course, we learn how to manipulate layout, colors, fonts, and advanced positioning mechanics like Grid and Flexbox to make web pages responsive and accessible.</p>
+    </main>
 
-  </main>
-  <footer>
-    <p>This page was originally created by Colleen van Lent for the <a
-        href="https://www.coursera.org/specializations/web-design"> Web Design for Everybody</a> Specialization.
-      Specialization. Students are invited to make changes.</p>
-  </footer>
+    <footer>
+        <p>&copy; University of Michigan - Introduction to CSS3</p>
+    </footer>
 
 </body>
-
 </html>
