@@ -1,121 +1,156 @@
 /* ==========================================================================
-   MICHIGAN SPRINGTIME - CHUẨN HÓA THEO ĐÚNG FILE HTML GỐC CỦA BẠN
+   FINAL PROJECT: ACCESSIBLE FLOWER BOUTIQUE SITE STYLESHEET
    ========================================================================== */
 
-/* --- THUỘC TÍNH BÀI 1 --- */
-
+/* Toàn bộ màu sắc được lựa chọn đạt chuẩn kiểm tra độ tương phản WAVE */
 body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #fcfaf8; /* Nền kem sáng ấm áp */
+    color: #2b2b2b;            /* Chữ xám đen đậm tương phản cao */
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #00274c; /* Màu xanh đậm Michigan */
-    padding: 20px;
+    background-color: #9c3d54; /* Màu hồng ruby thẫm sang trọng */
+    padding: 25px 10px;
 }
 
 h1 {
-    text-align: center;
-    font-family: 'Helvetica Neue', sans-serif;
-    color: #ffffff; /* Chữ trắng để nổi bật trên nền xanh */
     margin: 0;
+    text-align: center;
+    color: #ffffff;            /* Trắng nổi bật trên nền hồng thẫm */
+    font-family: Georgia, serif;
+    font-size: 2.2em;
 }
 
 main {
-    background-color: #ffffff;
-    font-size: 1.1em;
-    padding: 30px;
-    margin: 20px auto;
     max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
 }
 
-p {
-    line-height: 1.8; /* Giúp đoạn văn thoáng, dễ đọc hơn */
-    color: #333333;
-}
-
-footer {
-    background-color: #00274c;
-    color: #ffffff;
-    text-align: center;
-    padding: 15px;
-    margin-top: 20px;
-}
-
-/* Định dạng menu */
-nav {
-    display: inline-block;
-    width: 80%;
-    background-color: #ffcb05; /* Đổi sang nền vàng Michigan để sửa lỗi tương phản chữ tím */
-    padding: 15px 10%;
-}
-
-li {
-    display: inline-block;
-    width: 150px; /* Tăng độ rộng để chữ không bị đè lên nhau */
-    text-align: center;
-}
-
-nav a {
-    color: #00274c !important; /* Ép chữ menu thành màu xanh đậm cho rõ */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-
-/* --- THUỘC TÍNH BÀI 2 (GRID & FLEX) --- */
-
-/* Link ẩn nhảy trang */
+/* --- Yêu cầu 1: Thuộc tính position và lớp giả :focus cho Skip-link --- */
 .skip-link {
     position: absolute;
-    top: -50px;
-    left: 0;
-    background: #ffcb05;
-    color: #00274c;
-    padding: 10px;
-    z-index: 100;
-    text-decoration: none;
+    top: -100px;
+    left: 10px;
+    background-color: #ffeb3b;
+    color: #000000;
+    padding: 12px 20px;
+    z-index: 999;
     font-weight: bold;
+    text-decoration: none;
+    border: 2px solid #000000;
 }
+
 .skip-link:focus {
-    top: 0;
+    top: 10px; /* Xuất hiện khi bấm nút Tab */
 }
 
-/* Ảnh trong nav rộng 10% */
-nav img {
-    width: 100px;
+/* --- Yêu cầu 2: Thiết kế điều hướng hấp dẫn sử dụng Flexbox (Ít nhất 3 thuộc tính) --- */
+.nav-flex {
+    display: flex;
+    justify-content: center;
+    background-color: #312c2c; /* Màu đen đất tương phản cao với chữ trắng/vàng */
+    padding: 0;
+    list-style: none;
+}
+
+.nav-flex a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+/* --- Yêu cầu 6: Cập nhật ít nhất một phần tử bằng lớp giả di chuột (:hover) --- */
+.nav-flex a:hover {
+    background-color: #9c3d54; /* Đổi màu khi di chuột qua */
+    color: #ffffff;
+}
+
+.nav-flex a.active {
+    background-color: #9c3d54;
+    border-bottom: 4px solid #ffeb3b;
+}
+
+/* --- Yêu cầu 3: Định dạng mô hình hộp (Box Model) cho tất cả hình ảnh (Viền, đệm, bán kính) --- */
+img {
+    max-width: 100%;
     height: auto;
-    vertical-align: middle;
+    box-sizing: border-box;
 }
 
-/* Cấu trúc Grid 2 cột cho trang Neighborhood */
-.grid {
-    display: grid;
-    grid-template-columns: 40% 40%;
-    justify-content: space-around;
-    align-items: start;
-    row-gap: 25px;
-    margin-top: 20px;
-}
-
-.grid img {
+.main-img {
+    display: block;
     width: 100%;
-    height: auto;
-    border-radius: 4px;
+    max-height: 450px;
+    object-fit: cover;
+    margin: 20px 0;
+    border: 6px solid #9c3d54;    /* Thuộc tính đường viền (border) */
+    padding: 8px;                  /* Thuộc tính đệm (padding) */
+    border-radius: 12px;           /* Thuộc tính bán kính viền (border-radius) */
 }
 
-/* Cấu trúc Flexbox cho trang Parks */
-.flex {
+/* --- Yêu cầu 4: Áp dụng cấu trúc Grid gồm ít nhất hai cột cho phần tử cha --- */
+.flower-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Tạo 2 cột bằng nhau */
+    gap: 30px;                             /* Khoảng cách giữa các cột/hàng */
+    margin-top: 25px;
+}
+
+.grid-item {
+    background-color: #fff8f9;
+    border: 1px solid #ebd3d8;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 2px solid #9c3d54;
+    padding: 4px;
+    border-radius: 6px;
+}
+
+/* --- Yêu cầu 5: Áp dụng Flex cho phần tử cha (Trang Gallery) --- */
+.gallery-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 20px;
+    gap: 15px;
+    margin-top: 25px;
 }
 
-.flex img {
-    width: 30%;
-    height: auto;
+/* --- Yêu cầu 7: Sử dụng bộ chọn nâng cao nth-child làm việc chậm và cẩn thận --- */
+.gallery-container img {
+    width: 31%;
+    height: 200px;
+    object-fit: cover;
+    border: 3px solid #312c2c;
+    padding: 5px;
+}
+
+/* Tạo kiểu dáng viền khác biệt cho ảnh thứ hai (ở giữa) bằng nth-child(2) */
+.gallery-container img:nth-child(2) {
+    border: 3px solid #9c3d54; /* Đổi sang viền đỏ thẫm nổi bật */
+    border-radius: 15px;       /* Bo góc tròn hơn hẳn các ảnh khác */
+}
+
+/* Footer định dạng rõ ràng */
+footer {
+    background-color: #312c2c;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.95em;
+    margin-top: 50px;
 }
