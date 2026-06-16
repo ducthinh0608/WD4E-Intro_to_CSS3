@@ -1,36 +1,112 @@
+/* ==========================================================================
+   COMBINED STYLE SHEET (WEEK 1 + ADVANCED GRID/FLEXBOX ASSIGNMENT)
+   ========================================================================== */
+
+/* --- CÁC THUỘC TÍNH TỪ BÀI TẬP TRƯỚC --- */
+
 body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+    font-family: Arial, sans-serif; /* Sửa đổi thuộc tính họ phông chữ */
+    font-size: 16px;                /* Sửa đổi kích thước phông chữ */
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
 }
 
 header {
-    background-color: #f0f0f0;
-}
-
-nav {
-    background-color: #333333;
-}
-
-main {
-    background-color: #ffffff;
-    font-size: 1.1em;
-}
-
-footer {
-    background-color: #222222;
-}
-
-li {
-    display: inline-block;
-    width: 120px;
+    background-color: #00274c;      /* Màu nền Xanh đậm (Chuẩn màu ĐH Michigan) */
+    padding: 15px;
 }
 
 h1 {
-    text-align: center;
-    font-family: 'Helvetica Neue', sans-serif;
-    color: #00274c;
+    text-align: center;             /* Căn chỉnh văn bản */
+    font-family: 'Helvetica Neue', sans-serif; /* Họ phông chữ */
+    color: #ffffff;                 /* Thuộc tính màu sắc */
+    margin: 0;
+}
+
+main {
+    background-color: #ffffff;      /* Sửa đổi màu nền */
+    font-size: 1.1em;               /* Thuộc tính kích thước phông chữ */
+    padding: 20px;
+    margin: 10px;
 }
 
 p {
-    line-height: 1.6;
+    line-height: 1.6;               /* Thuộc tính chiều cao dòng */
+}
+
+footer {
+    background-color: #00274c;      /* Sửa đổi thuộc tính màu nền */
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Kiểu dáng cho phần tử li */
+li {
+    display: inline-block;          
+    width: 120px;                   
+    text-align: center;
+}
+
+/* --- CÁC THUỘC TÍNH BỔ SUNG CHO BÀI TẬP MỚI --- */
+
+/* Thiết lập link "Chuyển đến nội dung chính" ẩn đi, chỉ hiện khi ấn TAB */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #ffcb05;            /* Màu vàng ĐH Michigan */
+    color: #00274c;
+    padding: 8px;
+    z-index: 100;
+    text-decoration: none;
+    font-weight: bold;
+}
+.skip-link:focus {
+    top: 0;                         /* Hiện lên trên cùng khi focus */
+}
+
+/* Thay đổi phần tử nav để sử dụng khối nội tuyến (inline-block) và rộng khoảng 80% */
+nav {
+    display: inline-block;
+    width: 80%;
+    background-color: #ffcb05;      /* Màu nền vàng */
+    padding: 10px 10%;
+}
+
+nav a {
+    color: #00274c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Bộ chọn hậu duệ: chỉ tạo kiểu cho hình ảnh TRONG điều hướng (nav img) rộng khoảng 10% */
+nav img {
+    width: 10%;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* Tạo kiểu cho lớp lưới để sử dụng lưới hai cột, mỗi cột xấp xỉ 40% */
+.grid {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: space-around;  /* Sử dụng các thuộc tính căn chỉnh */
+    align-items: center;           
+    row-gap: 25px;                 
+}
+
+/* Bộ chọn hậu duệ: chỉ tạo kiểu cho các hình ảnh TRONG lớp lưới (.grid img) rộng 100% */
+.grid img {
+    width: 100%;
+    height: auto;
+}
+
+/* Tạo kiểu cho lớp flex để sử dụng flex, thiết lập các thuộc tính flex-wrap và justify-content */
+.flex {
+    display: flex;
+    flex-wrap: wrap;               
+    justify-content: space-between; 
 }
